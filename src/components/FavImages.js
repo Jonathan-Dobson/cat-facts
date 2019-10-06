@@ -14,14 +14,6 @@ class FavImages extends React.Component {
       this.setState({saved: updatedimgs})
     }
 
-    // deleteFav = (i) => {
-    //   let savedFavs = this.state.saved
-    //   localStorage.setItem("cats", JSON.stringify(savedFavs))
-    //   const removeFav = (catImg,index)=>i!==index
-    //   savedFavs = savedFavs.filter(removeFav)
-    //   this.setState({saved: savedFavs})
-    // }
-
     mappedFavs = () => this.state.saved.map((cat,index)=>(
           <div key={index}>
             <img src={cat} alt={index} width="450" />
