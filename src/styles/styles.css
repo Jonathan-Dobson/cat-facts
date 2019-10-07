@@ -16,6 +16,7 @@ nav {
     justify-content: center;
     box-shadow: 5px 5px 5px #40261B;
     position: sticky;
+    z-index: 30;
     top: 0px;
 }
 nav > a {
@@ -59,4 +60,20 @@ nav > a:hover , .active{
     
 }
 
-
+.fav-facts {
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    max-width: 500px;
+    padding: 20px;
+    border: 4px solid #007AD9;
+    margin: 20px;
+}
+.btn-del-quote {
+    position: relative;
+    top: -38px;
+}
+.btn-del-img {
+    position: relative;
+    top: -35px;
+}

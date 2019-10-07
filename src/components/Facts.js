@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import {Button} from 'primereact/button';
+
 
 class Facts extends React.Component {
   constructor(){
@@ -17,15 +19,19 @@ class Facts extends React.Component {
     this.setState({quotes: updatedQuotes})
   }
   
-  mappedFacts = () => this.state.quotes.map((quote,index)=><p key={index}>
-    {quote}
-    <button onClick={()=>this.removeQuote(index)}>Delete</button>
-  </p>)
+  mappedFacts = () => this.state.quotes.map((quote,index)=><div >
+
+    <p className='fav-facts' key={index}>
+      {quote}
+      {/* <button onClick={()=>this.removeQuote(index)}>Delete</button> */}
+    </p>
+    <Button onClick={()=>this.removeQuote(index)} icon='pi pi-trash' className='p-button-primary btn-del-quote'/>
+  </div>
+  )
 
   render(){
     return (
-      <div>
-        Fav Facts
+      <div className='fact-content'>
         {this.mappedFacts()}
       </div>
     )

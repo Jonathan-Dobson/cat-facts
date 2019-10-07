@@ -1,4 +1,6 @@
 import React from 'react';
+import {Button} from 'primereact/button';
+
 
 class FavImages extends React.Component {
     constructor(){
@@ -15,16 +17,18 @@ class FavImages extends React.Component {
     }
 
     mappedFavs = () => this.state.saved.map((cat,index)=>(
-          <div key={index}>
+        <div>  
+          <div className='fav-facts' key={index}>
             <img src={cat} alt={index} width="450" />
-            <button onClick={()=>this.deleteFav(index)}>Delete</button>
           </div>
+            <Button onClick={()=>this.deleteFav(index)} icon='pi pi-trash' className='p-button-primary btn-del-img'/>
+        </div>
         )
       )
      
     render(){
         return (
-          <div>
+          <div className=''>
           {this.mappedFavs()}
         </div>
       )
