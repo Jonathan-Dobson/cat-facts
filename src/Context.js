@@ -27,10 +27,10 @@ class CatProvider extends React.Component {
     }
 
     getFacts = () => {
-        axios.get("facts")
+        axios.get("getfacts")
             .then(response=>{
                 this.setState({facts: response.data})
-            })
+            },()=>console.log(this.state.facts))
             .catch(error=>console.log(error))
     }
 
