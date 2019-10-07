@@ -7,6 +7,7 @@ class Facts extends React.Component {
       quotes: JSON.parse(localStorage.getItem("facts")) || []
     }
   }
+
   removeQuote = (index) => {
     // make a function that returns a boolean
     const updatedQuotes = this.state.quotes.filter((quote,i) => index !== i )
@@ -16,7 +17,6 @@ class Facts extends React.Component {
     this.setState({quotes: updatedQuotes})
   }
   
-
   mappedFacts = () => this.state.quotes.map((quote,index)=><p key={index}>
     {quote}
     <button onClick={()=>this.removeQuote(index)}>Delete</button>

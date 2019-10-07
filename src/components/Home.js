@@ -1,5 +1,7 @@
 import React from 'react';
-import { withCat } from '../Context'
+import { withCat } from '../Context';
+import {Button} from 'primereact/button';
+import {Growl} from 'primereact/growl';
 
 
 const Home = (props) => {
@@ -29,23 +31,24 @@ const Home = (props) => {
     }
     
     return (
-        <div>
-            Home
-            <div>Fact result</div>
-            <button onClick={getAll} >Meow Now</button>
+        <>
+            <Button className="p-button-primary" icon="pi pi-refresh" onClick={getAll} label="Meow Now!"></Button>
             {props.image.url && 
             <>
-                <div>
+                <div className="fact-content">
                     {props.fact}
-                    <button onClick={ saveQuote }>Save to Favorite Quotes</button>
                 </div>
-                <img src={props.image.url} alt='catimage' width="450" />
                 <div>
-                    <button onClick={ saveImage }>Save to Favorite Images</button>
+
+                <Button className="p-button-primary btn-save-quote" icon="pi pi-heart" onClick={ saveQuote } tooltip="Save this quote to favorites" />
+                </div>
+                <img src={props.image.url} alt='catimage' width="450" className="catimg"/>
+                <div>
+                    <Button className="p-button-primary btn-save-img" icon="pi pi-heart" onClick={ saveImage } tooltip="Save this picture to favorites" />
                 </div>
             </>
             }
-        </div>
+        </>
     )
 }
 

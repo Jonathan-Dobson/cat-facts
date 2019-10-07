@@ -6,16 +6,19 @@ import FavImages from './FavImages';
 import Navbar from './Navbar';
 import {Switch, Route} from 'react-router-dom'
 
-function App() {
+function App(props) {
+  console.log("App Props", props)
   return (
     <div>
       <Navbar />
-      <Switch>
-        <Route path="/facts" component = { Facts } />
-        <Route path="/image" component = { FavImages } />
-        <Route exact path="/" component = { Home } />
-        <Route path = "/" component = { NotFound } />
-      </Switch>
+      <div className="content-container">
+        <Switch>
+          <Route path="/facts" component = { Facts } />
+          <Route path="/image" component = { FavImages } />
+          <Route exact path="/" component = { Home } />
+          <Route path = "/" component = { NotFound } />
+        </Switch>
+      </div>
 
     </div>
   );

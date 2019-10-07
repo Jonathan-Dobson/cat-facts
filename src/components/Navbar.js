@@ -1,14 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = (props) => {
+    console.log("Navbar Props",props.location)
+    const style = {
+        home: {className: props.location.pathname==="/"?"active":""},
+        facts: {className: props.location.pathname==="/facts"?"active":""},
+        image: {className: props.location.pathname==="/image"?"active":""}
+    }
+
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-evenly'}}>
-            <Link to = '/facts'>Favorite Facts </Link>
-            <Link to = '/'> Home </Link>
-            <Link to = '/image'> Favorite Images </Link>
-        </div>
+        <nav>
+            <Link to = '/' {...style.home}> Home </Link>
+            <Link to = '/facts' {...style.facts}>Favorite Facts </Link>
+            <Link to = '/image' {...style.image}> Favorite Images </Link>
+        </nav>
     )
 }
 
-export default Navbar
+export default withRouter(Navbar)
