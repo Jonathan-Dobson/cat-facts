@@ -11,7 +11,11 @@ const port = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, ".", "build")))
 
 app.get("/getfacts" , (req, res) => {
-    axios.get("https://cat-fact.herokuapp.com/facts")
+    axios.get("https://cat-fact.herokuapp.com/facts" , {
+        headers: {
+            "Access-Control-Allow-Origin": "*"
+        }
+    })
         .then((response=>{
             // console.log(response.data)
             res.status(200).send(response.data)
