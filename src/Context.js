@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import facts from './catfacts.json'
 
 // Context allows your app to manage state and share it directly with any
 // component without the need to pass through all its parent components' props
@@ -12,7 +13,7 @@ class CatProvider extends React.Component {
     constructor() {
         super()
         this.state = {
-            facts: {},
+            facts: facts,
             fact: '',
             image: {
                 url: '',
@@ -22,18 +23,18 @@ class CatProvider extends React.Component {
         }
     }
     
-    componentDidMount(){
-        this.getFacts()
-    }
+    // componentDidMount(){
+    //     this.getFacts()
+    // }
 
-    getFacts = () => {
-        axios.get("getfacts")
-            .then(response=>{
-                console.log(response.data)
-                this.setState({facts: response.data})
-            },()=>console.log(this.state.facts))
-            .catch(error=>console.log(error))
-    }
+    // getFacts = () => {
+    //     axios.get("getfacts")
+    //         .then(response=>{
+    //             console.log(response.data)
+    //             this.setState({facts: response.data})
+    //         },()=>console.log(this.state.facts))
+    //         .catch(error=>console.log(error))
+    // }
 
     getRandomFact = () => {
         const num = Math.floor(Math.random()*this.state.facts.all.length)
