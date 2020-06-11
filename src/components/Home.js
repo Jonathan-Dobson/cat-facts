@@ -47,7 +47,7 @@ const Home = (props) => {
             <Growl ref={(el) => setGrowl(el)} />
             <Growl ref={(el) => setGrowl(el)} />
 
-            <Button className="p-button-primary" icon="pi pi-refresh" onClick={getAll} label="New Meow Now!"></Button>
+            <Button className="p-button-primary" icon="pi pi-refresh" onClick={getAll} label="Load a random cat!"></Button>
             {props.image.url && 
             <>
                 <div className="fact-content">

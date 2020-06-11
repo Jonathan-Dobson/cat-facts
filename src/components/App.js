@@ -4,6 +4,7 @@ import Facts from './Facts';
 import NotFound from './NotFound';
 import FavImages from './FavImages';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import {Switch, Route} from 'react-router-dom'
 
 function App(props) {
@@ -19,7 +20,7 @@ function App(props) {
           <Route path = "/" component = { NotFound } />
         </Switch>
       </div>
-
+      <Footer />
     </div>
   );
 }

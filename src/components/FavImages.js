@@ -29,7 +29,7 @@ class FavImages extends React.Component {
     render(){
         return (
           <div className=''>
-          {this.mappedFavs()}
+          {this.state.saved.length>0 ? this.mappedFavs() : <h1>No Favorites Saved Yet.</h1>}
         </div>
       )
     }

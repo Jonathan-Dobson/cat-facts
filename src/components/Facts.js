@@ -31,8 +31,9 @@ class Facts extends React.Component {
 
   render(){
     return (
-      <div className='fact-content'>
-        {this.mappedFacts()}
+      <div>
+      {/* <div className='fact-content'> */}
+        {this.state.quotes.length>0 ? this.mappedFacts() : <h1>No Favorites Saved Yet.</h1>}
       </div>
     )
   }
